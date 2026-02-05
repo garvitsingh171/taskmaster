@@ -1,3 +1,5 @@
+import "../styles/TaskItem.css";
+
 function TaskItem({ task, date, label, onDelete }) {
     return (
         <li className="task-item">

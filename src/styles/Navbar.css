@@ -1,6 +1,6 @@
 .navbar {
-  background: var(--glass);
-  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--glass-border);
   padding: 1rem 0;
   position: sticky;
@@ -20,9 +20,8 @@
 .navbar-logo {
   font-size: 1.5rem;
   font-weight: 800;
-  color: white;
+  color: var(--text-main);
   text-decoration: none;
-  letter-spacing: -1px;
 }
 
 .navbar-logo span { color: var(--primary); }
@@ -34,13 +33,12 @@
 }
 
 .nav-item {
-  color: #94a3b8;
+  color: var(--text-sub);
   text-decoration: none;
-  font-weight: 500;
-  transition: all 0.3s ease;
+  font-weight: 600;
+  transition: 0.3s;
 }
 
 .nav-item:hover, .nav-item.active {
-  color: white;
-  text-shadow: 0 0 10px rgba(139, 92, 246, 0.5);
+  color: var(--primary);
 }

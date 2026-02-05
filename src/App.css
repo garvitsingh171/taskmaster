@@ -1,16 +1,20 @@
 :root {
-  --primary: #8b5cf6;
-  --primary-hover: #7c3aed;
-  --bg-dark: #0f172a;
-  --glass: rgba(255, 255, 255, 0.05);
-  --glass-border: rgba(255, 255, 255, 0.1);
+  /* Blue & Cream Palette */
+  --primary: #3b82f6;          /* Vibrant Blue */
+  --primary-hover: #2563eb;    /* Deep Blue */
+  --bg-light: #fdfbf7;         /* Soft Cream White */
+  --accent-blue: #dbeafe;      /* Sky Blue Hint */
+  --text-main: #1e293b;        /* Dark Slate */
+  --glass-white: rgba(255, 255, 255, 0.7);
+  --soft-shadow: 0 10px 30px -10px rgba(59, 130, 246, 0.15);
 }
 
 body {
   margin: 0;
-  font-family: 'Poppins', sans-serif;
-  background: radial-gradient(circle at top right, #1e1b4b, #0f172a);
-  color: #f8fafc;
+  font-family: 'Plus Jakarta Sans', 'Poppins', sans-serif;
+  /* Cream and Blue radial gradient blend */
+  background: radial-gradient(circle at top right, #eff6ff, #fdfbf7);
+  color: var(--text-main);
   min-height: 100vh;
 }
 
@@ -23,12 +27,27 @@ body {
 .content-area {
   flex: 1;
   padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .welcome-text {
   text-align: center;
-  font-size: 3rem;
-  background: linear-gradient(to right, #a78bfa, #f472b6);
+  font-size: 3.5rem;
+  font-weight: 800;
+  /* Blue to Light-Blue Gradient Text */
+  background: linear-gradient(to right, #3b82f6, #60a5fa);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  margin-bottom: 2rem;
+  letter-spacing: -1.5px;
+}
+
+/* Optional: Add a subtle animation to the background */
+@keyframes softGlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }

@@ -1,21 +1,21 @@
 /* Container for each task row */
 .task-item {
-  background: var(--card-bg);
+  background: #ffffff; /* Pure White Card */
   padding: 16px 20px;
   margin-bottom: 12px;
   border-radius: 16px;
   display: flex;
   align-items: center;
-  gap: 15px;
-  border: 1px solid #e2e8f0; /* Soft light blue border */
+  gap: 15px; 
+  border: 1px solid #e2e8f0; /* Soft light blue-grey border */
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow: 0 4px 6px -1px rgba(59, 130, 246, 0.05);
 }
 
 .task-item:hover {
-  background: var(--cream-accent);
+  background: #fffdf5; /* Subtle Cream hover */
   transform: translateX(6px);
-  border-color: var(--accent-light);
+  border-color: #3b82f6; /* Blue border on hover */
   box-shadow: 0 10px 15px -3px rgba(59, 130, 246, 0.1);
 }
 
@@ -23,7 +23,7 @@
 .task-text {
   flex: 2;
   font-weight: 600;
-  color: var(--text-primary);
+  color: #1e293b; /* Dark Slate text */
   font-size: 1rem;
 }
 
@@ -32,17 +32,17 @@
   flex: 1;
   font-size: 0.85rem;
   font-weight: 500;
-  color: var(--text-secondary);
+  color: #64748b; /* Muted blue-grey */
   text-align: center;
-  background: #f1f5f9;
+  background: #f1f5f9; /* Light blue-grey background */
   padding: 4px 10px;
   border-radius: 8px;
 }
 
 /* The Label - Styled as a Sky Blue chip */
 .task-item span:nth-child(3) {
-  background: var(--accent-light);
-  color: var(--primary);
+  background: #dbeafe; /* Light Blue */
+  color: #3b82f6; /* Primary Blue */
   padding: 5px 14px;
   border-radius: 20px;
   font-size: 0.75rem;
@@ -56,8 +56,8 @@
 
 /* Delete Button Styling */
 .delete-btn {
-  background: #fef2f2;
-  color: #ef4444;
+  background: #fef2f2; /* Soft red tint */
+  color: #ef4444; /* Bright red */
   border: 1px solid #fee2e2;
   width: 34px;
   height: 34px;
@@ -72,8 +72,9 @@
 
 .delete-btn:hover {
   background: #ef4444;
-  color: white;
+  color: #ffffff;
   transform: rotate(90deg) scale(1.1);
+  border-color: #ef4444;
 }
 
 .delete-btn .icon {
