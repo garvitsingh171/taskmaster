@@ -5,6 +5,7 @@ import "../styles/AddTask.css";
 function AddTask() {
     const [task, setTask] = useState("");
     const [taskArray, setTaskArray] = useState([]);
+    const [date, setDate] = useState('No-Date');
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -39,6 +40,8 @@ function AddTask() {
                             id="due"
                             className="task-input date-picker"
                             placeholder="Enter due date"
+                            value={date}
+                            onChange={(e) => setDate(e.target.value)}
                         />
                     </div>
 
@@ -64,7 +67,7 @@ function AddTask() {
                         Add to List
                     </button>
                 </form>
-                <TaskList tasks={taskArray} onDelete={onDelete} />
+                <TaskList tasks={taskArray} date={date} onDelete={onDelete} />
             </div>
         </div>
     );
