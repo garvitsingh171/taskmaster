@@ -37,18 +37,29 @@ function AddTask() {
                         <input
                             type="date"
                             id="due"
+                            className="task-input date-picker"
                             placeholder="Enter due date"
                         />
                     </div>
+
                     <div className="input-group">
                         <label htmlFor="label">Label</label>
-                        <select name="label" id="label">
-                            <option value="">Choose a Label</option>
-                            <option value="">Education</option>
-                            <option value="">Sports</option>
-                            <option value="">Market</option>
-                        </select>
+                        <div className="select-wrapper">
+                            <select
+                                name="label"
+                                id="label"
+                                className="task-select"
+                            >
+                                <option value="" disabled selected>
+                                    Choose a Label
+                                </option>
+                                <option value="education">Education</option>
+                                <option value="sports">Sports</option>
+                                <option value="market">Market</option>
+                            </select>
+                        </div>
                     </div>
+
                     <button type="submit" className="submit-btn">
                         Add to List
                     </button>
