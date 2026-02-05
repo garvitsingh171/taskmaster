@@ -6,6 +6,7 @@ function AddTask() {
     const [task, setTask] = useState("");
     const [taskArray, setTaskArray] = useState([]);
     const [date, setDate] = useState('No-Date');
+    const [label, setLabel] = useState('No-label');
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -52,6 +53,8 @@ function AddTask() {
                                 name="label"
                                 id="label"
                                 className="task-select"
+                                value={label}
+                                onChange={(e) => setLabel(e.target.value)}
                             >
                                 <option value="" disabled selected>
                                     Choose a Label
@@ -67,7 +70,7 @@ function AddTask() {
                         Add to List
                     </button>
                 </form>
-                <TaskList tasks={taskArray} date={date} onDelete={onDelete} />
+                <TaskList tasks={taskArray} date={date} label={label} onDelete={onDelete} />
             </div>
         </div>
     );

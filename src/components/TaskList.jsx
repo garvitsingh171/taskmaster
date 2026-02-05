@@ -1,7 +1,7 @@
 import TaskItem from "./TaskItem";
 import "../styles/TaskList.css";
 
-function TaskList({ tasks, date, onDelete }) {
+function TaskList({ tasks, date, label, onDelete }) {
     return (
         <ul className="task-list-container">
             {tasks.map((task, index) => (
@@ -9,6 +9,7 @@ function TaskList({ tasks, date, onDelete }) {
                     key={index}
                     task={task}
                     date={date}
+                    label={label}
                     onDelete={() => onDelete(index)}
                 />
             ))}
