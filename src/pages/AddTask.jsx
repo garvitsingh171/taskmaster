@@ -40,6 +40,15 @@ function AddTask() {
                             placeholder="Enter due date"
                         />
                     </div>
+                    <div className="input-group">
+                        <label htmlFor="label">Label</label>
+                        <select name="label" id="label">
+                            <option value="">Choose a Label</option>
+                            <option value="">Education</option>
+                            <option value="">Sports</option>
+                            <option value="">Market</option>
+                        </select>
+                    </div>
                     <button type="submit" className="submit-btn">
                         Add to List
                     </button>
