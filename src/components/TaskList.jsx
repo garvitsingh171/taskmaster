@@ -1,16 +1,17 @@
 import TaskItem from "./TaskItem";
+import { useTasks } from "../hooks/useTasks";
 import "../styles/TaskList.css";
 
-function TaskList({ tasks, date, label, onDelete }) {
+function TaskList() {
+    const { tasks } = useTasks();
+
     return (
         <ul className="task-list-container">
             {tasks.map((task, index) => (
                 <TaskItem
                     key={index}
-                    task={task}
-                    date={date}
-                    label={label}
-                    onDelete={() => onDelete(index)}
+                    data={task}
+                    index={index}
                 />
             ))}
         </ul>

@@ -1,22 +1,17 @@
 import { useState } from "react";
+import { useTasks } from "../hooks/useTasks";
 import TaskList from "../components/TaskList";
 import "../styles/AddTask.css";
 
 function AddTask() {
-    const [task, setTask] = useState("");
-    const [taskArray, setTaskArray] = useState([]);
-    const [date, setDate] = useState('No-Date');
-    const [label, setLabel] = useState('No-label');
+    const { addTask } = useTasks();
+    const [formData, setFormData] = useState({task: '', due: '', label: ''});
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        if (!task) return;
-        setTaskArray([task, ...taskArray]);
-        setTask("");
-    };
-
-    const onDelete = (ind) => {
-        setTaskArray(taskArray.filter((_, index) => index !== ind));
+        if (!formData) return;
+        addTask(formData);
+        setFormData({task: '', due: '', label: ''});
     };
 
     return (
@@ -30,8 +25,8 @@ function AddTask() {
                             type="text"
                             id="task"
                             placeholder="Enter task description..."
-                            value={task}
-                            onChange={(e) => setTask(e.target.value)}
+                            value={formData.task}
+                            onChange={(e) => setFormData({...formData, task: e.target.value})}
                         />
                     </div>
                     <div className="input-group">
@@ -41,8 +36,8 @@ function AddTask() {
                             id="due"
                             className="task-input date-picker"
                             placeholder="Enter due date"
-                            value={date}
-                            onChange={(e) => setDate(e.target.value)}
+                            value={formData.due}
+                            onChange={(e) => setFormData({...formData, due: e.target.value})}
                         />
                     </div>
 
@@ -53,8 +48,8 @@ function AddTask() {
                                 name="label"
                                 id="label"
                                 className="task-select"
-                                value={label}
-                                onChange={(e) => setLabel(e.target.value)}
+                                value={formData.label}
+                                onChange={(e) => setFormData({...formData, label: e.target.value})}
                             >
                                 <option value="" disabled selected>
                                     Choose a Label
@@ -70,7 +65,7 @@ function AddTask() {
                         Add to List
                     </button>
                 </form>
-                <TaskList tasks={taskArray} date={date} label={label} onDelete={onDelete} />
+                <TaskList/>
             </div>
         </div>
     );
