@@ -5,6 +5,7 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import AddTask from "./pages/AddTask";
 import LogIn from "./pages/LogIn";
+import Home from "./pages/Home";
 
 function App() {
     return (
@@ -16,7 +17,7 @@ function App() {
                     <Routes>
                         <Route
                             path="/"
-                            element={<h1 className="welcome-text">Welcome to Task Master</h1>}
+                            element={<Home />}
                         />
                         <Route path="/add" element={<AddTask />} />
                         <Route path="/login" element={<LogIn />} />
