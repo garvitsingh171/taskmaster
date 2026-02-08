@@ -1,5 +1,5 @@
 import "./App.css";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 import { TaskProvider } from "./context/TaskProvider";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
@@ -9,7 +9,7 @@ import LogIn from "./pages/LogIn";
 function App() {
     return (
         <TaskProvider>
-            <BrowserRouter>
+            <HashRouter>
                 <Navbar />
 
                 <main className="content-area">
@@ -24,7 +24,7 @@ function App() {
                 </main>
 
                 <Footer />
-            </BrowserRouter>
+            </HashRouter>
         </TaskProvider>
     );
 }
