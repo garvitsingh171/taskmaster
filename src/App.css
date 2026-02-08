@@ -1,5 +1,9 @@
 /* ================= App Layout ================= */
 
+body {
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
 .app-wrapper {
   display: flex;
   flex-direction: column;

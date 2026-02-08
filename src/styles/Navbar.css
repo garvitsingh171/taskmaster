@@ -1,63 +1,137 @@
+/* ===========================
+   NAVBAR – CLEAN & PREMIUM
+   =========================== */
+
 .navbar {
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: rgba(255,255,255,0.85);
+
+  background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
   border-bottom: 1px solid #e5edff;
   animation: slideDown 0.5s ease;
 }
 
+/* Navbar inner container */
 .navbar-container {
   max-width: 1100px;
-  margin: auto;
+  margin: 0 auto;
   padding: 16px 20px;
+
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
 }
 
+/* Logo */
 .navbar-logo {
-  font-size: 1.6rem;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 1.75rem;
   font-weight: 800;
-  color: var(--text-primary);
+  letter-spacing: -0.04em;
+  color: #0f172a; /* slate-900 */
 }
 
 .navbar-logo span {
-  color: var(--primary);
+  color: #2563eb; /* primary blue */
 }
 
+/* Navigation Links */
 .nav-links {
   display: flex;
-  gap: 26px;
+  align-items: center;
+  gap: 30px;
   list-style: none;
 }
 
+/* Nav Item Text */
 .nav-item {
-  font-weight: 600;
-  color: var(--text-secondary);
   position: relative;
-  transition: color 0.3s ease;
+
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 0.92rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+
+  color: #475569; /* slate-600 */
+  padding: 6px 0;
+  cursor: pointer;
+
+  opacity: 0.85;
+  transition:
+    color 0.25s ease,
+    opacity 0.25s ease;
 }
 
+/* Hover State */
+.nav-item:hover {
+  color: #0f172a;
+  opacity: 1;
+}
+
+/* Active State */
+.nav-item.active {
+  color: #2563eb;
+  font-weight: 600;
+  opacity: 1;
+}
+
+/* Underline Indicator */
 .nav-item::after {
   content: "";
   position: absolute;
-  width: 0%;
-  height: 3px;
-  bottom: -6px;
   left: 0;
-  background: var(--primary);
-  border-radius: 6px;
-  transition: width 0.3s ease;
-}
+  bottom: -6px;
 
-.nav-item:hover,
-.nav-item.active {
-  color: var(--primary);
+  width: 0%;
+  height: 2px;
+  background: #2563eb;
+  border-radius: 10px;
+
+  transition: width 0.25s ease;
 }
 
 .nav-item:hover::after,
 .nav-item.active::after {
   width: 100%;
+}
+
+/* ===========================
+   ANIMATIONS
+   =========================== */
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===========================
+   RESPONSIVE
+   =========================== */
+
+@media (max-width: 768px) {
+  .navbar-container {
+    padding: 14px 16px;
+  }
+
+  .nav-links {
+    gap: 22px;
+  }
+
+  .navbar-logo {
+    font-size: 1.5rem;
+  }
+
+  .nav-item {
+    font-size: 0.9rem;
+  }
 }
