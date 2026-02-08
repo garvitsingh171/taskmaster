@@ -3,29 +3,43 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  animation: fadeUp 0.6s ease;
+  background: radial-gradient(circle at top, #eef2ff, transparent 60%);
+  animation: fadeUp 0.6s ease both;
 }
 
 .login-card {
-  background: white;
-  padding: 50px;
+  background: linear-gradient(180deg, #ffffff, #f9fbff);
+  padding: 52px 48px;
   width: 100%;
   max-width: 420px;
-  border-radius: 30px;
-  border: 1px solid #e5edff;
-  box-shadow: 0 30px 60px rgba(59,130,246,0.15);
+  border-radius: 28px;
+  border: 1px solid rgba(99, 102, 241, 0.15);
+  box-shadow:
+    0 20px 40px rgba(59, 130, 246, 0.15),
+    0 8px 16px rgba(0, 0, 0, 0.04);
   text-align: center;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.login-card:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 30px 60px rgba(59, 130, 246, 0.22),
+    0 12px 24px rgba(0, 0, 0, 0.06);
 }
 
 .login-card h2 {
-  font-size: 2rem;
+  font-size: 2.2rem;
   font-weight: 800;
   color: var(--primary);
+  letter-spacing: -0.02em;
 }
 
 .login-card p {
+  margin-top: 6px;
+  margin-bottom: 32px;
+  font-size: 0.95rem;
   color: var(--text-secondary);
-  margin-bottom: 30px;
 }
 
 .login-form {
@@ -36,16 +50,64 @@
 
 .login-form input {
   padding: 14px 18px;
+  font-size: 0.95rem;
   border-radius: 14px;
   border: 2px solid #eef2ff;
+  background: #f9fbff;
+  transition:
+    border-color 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease;
+}
+
+.login-form input::placeholder {
+  color: #9ca3af;
 }
 
 .login-form input:focus {
   outline: none;
+  background: white;
   border-color: var(--primary);
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.15);
 }
 
 .login-btn {
-  margin-top: 10px;
+  margin-top: 14px;
+  padding: 14px;
+  border-radius: 16px;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: white;
   background: linear-gradient(135deg, #3b82f6, #60a5fa);
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 12px 24px rgba(59, 130, 246, 0.3);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    filter 0.25s ease;
+}
+
+.login-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 32px rgba(59, 130, 246, 0.35);
+  filter: brightness(1.05);
+}
+
+.login-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 10px 20px rgba(59, 130, 246, 0.25);
+}
+
+/* Animation */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
