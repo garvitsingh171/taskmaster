@@ -1,101 +1,51 @@
 .login-page {
+  min-height: calc(100vh - 160px);
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: calc(100vh - 160px); /* Adjusts for Navbar/Footer */
-  padding: 20px;
+  animation: fadeUp 0.6s ease;
 }
 
 .login-card {
-  background: var(--card-bg);
-  border: 1px solid #e2e8f0; /* Soft Blue-Grey border */
-  border-radius: 32px;
+  background: white;
   padding: 50px;
   width: 100%;
   max-width: 420px;
-  box-shadow: 0 20px 40px rgba(59, 130, 246, 0.05); /* Very soft blue shadow */
-  transition: transform 0.3s ease;
-}
-
-.login-header {
+  border-radius: 30px;
+  border: 1px solid #e5edff;
+  box-shadow: 0 30px 60px rgba(59,130,246,0.15);
   text-align: center;
-  margin-bottom: 35px;
 }
 
-.login-header h2 {
-  color: var(--primary);
+.login-card h2 {
   font-size: 2rem;
   font-weight: 800;
-  margin: 0;
-  letter-spacing: -1px;
+  color: var(--primary);
 }
 
-.login-header p {
+.login-card p {
   color: var(--text-secondary);
-  font-size: 0.95rem;
-  margin-top: 10px;
+  margin-bottom: 30px;
 }
 
 .login-form {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 18px;
 }
 
-.login-input {
-  background: #f8fafc; /* Very light blue-white */
-  border: 2px solid #f1f5f9;
-  border-radius: 14px;
+.login-form input {
   padding: 14px 18px;
-  width: 100%;
-  color: var(--text-primary);
-  font-size: 1rem;
-  box-sizing: border-box;
-  transition: all 0.2s ease;
+  border-radius: 14px;
+  border: 2px solid #eef2ff;
 }
 
-.login-input:focus {
+.login-form input:focus {
   outline: none;
-  background: #ffffff;
   border-color: var(--primary);
-  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
 }
 
 .login-btn {
-  background: var(--primary);
-  color: white;
-  width: 100%;
-  padding: 16px;
-  border-radius: 14px;
-  border: none;
-  font-weight: 700;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: all 0.3s ease;
   margin-top: 10px;
-}
-
-.login-btn:hover {
-  background: var(--primary-hover);
-  transform: translateY(-2px);
-  box-shadow: 0 10px 20px rgba(59, 130, 246, 0.2);
-}
-
-.login-footer {
-  margin-top: 25px;
-  text-align: center;
-  font-size: 0.9rem;
-  color: var(--text-secondary);
-}
-
-.signup-link {
-  margin-left: 6px;
-  color: var(--primary);
-  font-weight: 700;
-  text-decoration: none;
-}
-
-.signup-link:hover {
-  text-decoration: underline;
-  color: var(--primary-hover);
+  background: linear-gradient(135deg, #3b82f6, #60a5fa);
 }

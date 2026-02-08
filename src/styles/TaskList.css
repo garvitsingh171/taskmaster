@@ -1,82 +1,13 @@
-/* Container for each task row */
-.task-item {
-  background: var(--card-bg);
-  padding: 16px 20px;
-  margin-bottom: 12px;
-  border-radius: 16px;
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  border: 1px solid #e2e8f0; /* Soft light blue border */
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 4px 6px -1px rgba(59, 130, 246, 0.05);
+.task-list-container {
+  list-style: none;
+  padding: 0;
+  margin-top: 35px;
+  animation: fadeUp 0.5s ease;
 }
 
-.task-item:hover {
-  background: var(--cream-accent);
-  transform: translateX(6px);
-  border-color: var(--accent-light);
-  box-shadow: 0 10px 15px -3px rgba(59, 130, 246, 0.1);
-}
-
-/* The actual Task Text */
-.task-text {
-  flex: 2;
-  font-weight: 600;
-  color: var(--text-primary);
-  font-size: 1rem;
-}
-
-/* The Date - Styled as a clean text badge */
-.task-item span:nth-child(2) {
-  flex: 1;
-  font-size: 0.85rem;
-  font-weight: 500;
+.empty-text {
+  text-align: center;
   color: var(--text-secondary);
-  text-align: center;
-  background: #f1f5f9;
-  padding: 4px 10px;
-  border-radius: 8px;
-}
-
-/* The Label - Styled as a Sky Blue chip */
-.task-item span:nth-child(3) {
-  background: var(--accent-light);
-  color: var(--primary);
-  padding: 5px 14px;
-  border-radius: 20px;
-  font-size: 0.75rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  border: 1px solid rgba(59, 130, 246, 0.1);
-  min-width: 85px;
-  text-align: center;
-}
-
-/* Delete Button Styling */
-.delete-btn {
-  background: #fef2f2;
-  color: #ef4444;
-  border: 1px solid #fee2e2;
-  width: 34px;
-  height: 34px;
-  border-radius: 10px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.2s ease;
-  flex-shrink: 0;
-}
-
-.delete-btn:hover {
-  background: #ef4444;
-  color: white;
-  transform: rotate(90deg) scale(1.1);
-}
-
-.delete-btn .icon {
-  font-size: 1.4rem;
-  line-height: 1;
+  margin-top: 30px;
+  font-weight: 600;
 }

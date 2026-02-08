@@ -2,9 +2,9 @@ import "../styles/Footer.css";
 
 function Footer() {
     return (
-        <div className="footer">
-            <p>© Copyright 2026</p>
-        </div>
+        <footer className="footer">
+            <p>© 2026 Task Master. All rights reserved.</p>
+        </footer>
     );
 }
 

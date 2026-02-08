@@ -10,26 +10,23 @@ function App() {
     return (
         <TaskProvider>
             <BrowserRouter>
-                <div className="app-wrapper">
-                    <Navbar />
-                    <main className="content-area">
-                        <Routes>
-                            <Route
-                                path="/"
-                                element={
-                                    <h1 className="welcome-text">
-                                        Welcome to Task Manager
-                                    </h1>
-                                }
-                            />
-                            <Route path="/add" element={<AddTask />} />
-                            <Route path="/login" element={<LogIn />} />
-                        </Routes>
-                    </main>
-                    <Footer />
-                </div>
+                <Navbar />
+
+                <main className="content-area">
+                    <Routes>
+                        <Route
+                            path="/"
+                            element={<h1 className="welcome-text">Welcome to Task Master</h1>}
+                        />
+                        <Route path="/add" element={<AddTask />} />
+                        <Route path="/login" element={<LogIn />} />
+                    </Routes>
+                </main>
+
+                <Footer />
             </BrowserRouter>
         </TaskProvider>
     );
 }
+
 export default App;

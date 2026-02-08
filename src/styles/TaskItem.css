@@ -1,83 +1,53 @@
-/* Container for each task row */
 .task-item {
-  background: #ffffff; /* Pure White Card */
+  background: white;
+  border-radius: 18px;
   padding: 16px 20px;
-  margin-bottom: 12px;
-  border-radius: 16px;
+  margin-bottom: 14px;
   display: flex;
   align-items: center;
-  gap: 15px; 
-  border: 1px solid #e2e8f0; /* Soft light blue-grey border */
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 4px 6px -1px rgba(59, 130, 246, 0.05);
+  gap: 14px;
+  border: 1px solid #e5edff;
+  box-shadow: 0 10px 20px rgba(59,130,246,0.08);
+  animation: slideFade 0.4s ease;
+  transition: all 0.3s ease;
 }
 
 .task-item:hover {
-  background: #fffdf5; /* Subtle Cream hover */
   transform: translateX(6px);
-  border-color: #3b82f6; /* Blue border on hover */
-  box-shadow: 0 10px 15px -3px rgba(59, 130, 246, 0.1);
+  border-color: var(--primary);
 }
 
-/* The actual Task Text */
 .task-text {
   flex: 2;
   font-weight: 600;
-  color: #1e293b; /* Dark Slate text */
-  font-size: 1rem;
 }
 
-/* The Date - Styled as a clean text badge */
-.task-item span:nth-child(2) {
-  flex: 1;
-  font-size: 0.85rem;
-  font-weight: 500;
-  color: #64748b; /* Muted blue-grey */
-  text-align: center;
-  background: #f1f5f9; /* Light blue-grey background */
-  padding: 4px 10px;
-  border-radius: 8px;
+.task-date {
+  background: #eff6ff;
+  padding: 6px 10px;
+  border-radius: 10px;
+  font-size: 0.8rem;
 }
 
-/* The Label - Styled as a Sky Blue chip */
-.task-item span:nth-child(3) {
-  background: #dbeafe; /* Light Blue */
-  color: #3b82f6; /* Primary Blue */
-  padding: 5px 14px;
+.task-label {
+  background: var(--accent-light);
+  color: var(--primary);
+  padding: 6px 14px;
   border-radius: 20px;
   font-size: 0.75rem;
   font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  border: 1px solid rgba(59, 130, 246, 0.1);
-  min-width: 85px;
-  text-align: center;
 }
 
-/* Delete Button Styling */
 .delete-btn {
-  background: #fef2f2; /* Soft red tint */
-  color: #ef4444; /* Bright red */
-  border: 1px solid #fee2e2;
+  background: #fee2e2;
+  color: #ef4444;
+  border-radius: 10px;
   width: 34px;
   height: 34px;
-  border-radius: 10px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.2s ease;
-  flex-shrink: 0;
 }
 
 .delete-btn:hover {
   background: #ef4444;
-  color: #ffffff;
+  color: white;
   transform: rotate(90deg) scale(1.1);
-  border-color: #ef4444;
-}
-
-.delete-btn .icon {
-  font-size: 1.4rem;
-  line-height: 1;
 }

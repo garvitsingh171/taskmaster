@@ -7,12 +7,18 @@ function TaskItem({ data, index }) {
     return (
         <li className="task-item">
             <span className="task-text">{data.task}</span>
-            <span>{data.due}</span>
-            <span>{data.label}</span>
-            <button className="delete-btn" onClick={() => deleteTask(index)}>
-                <span className="icon">×</span>
+            <span className="task-date">{data.due || "No date"}</span>
+            <span className="task-label">{data.label || "General"}</span>
+
+            <button
+                className="delete-btn"
+                onClick={() => deleteTask(index)}
+                aria-label="Delete task"
+            >
+                ×
             </button>
         </li>
     );
 }
+
 export default TaskItem;

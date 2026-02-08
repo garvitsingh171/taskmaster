@@ -8,6 +8,7 @@ function Navbar() {
                 <Link to="/" className="navbar-logo">
                     Task <span>Master</span>
                 </Link>
+
                 <ul className="nav-links">
                     <li>
                         <NavLink
@@ -19,6 +20,7 @@ function Navbar() {
                             Dashboard
                         </NavLink>
                     </li>
+
                     <li>
                         <NavLink
                             to="/add"
@@ -29,9 +31,13 @@ function Navbar() {
                             + Add Task
                         </NavLink>
                     </li>
+
                     <li>
                         <NavLink
                             to="/login"
+                            className={({ isActive }) =>
+                                isActive ? "nav-item active" : "nav-item"
+                            }
                         >
                             Log In
                         </NavLink>
@@ -41,4 +47,5 @@ function Navbar() {
         </nav>
     );
 }
+
 export default Navbar;

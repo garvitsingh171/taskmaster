@@ -1,20 +1,20 @@
 import { useState } from "react";
-import { TaskContext } from './TaskContext';
+import { TaskContext } from "./TaskContext";
 
 export const TaskProvider = ({ children }) => {
-    const [taskArray, setTaskArray] = useState([]);
+    const [tasks, setTasks] = useState([]);
 
     const addTask = (task) => {
-        setTaskArray([task, ...taskArray]);
-    }
+        setTasks((prev) => [task, ...prev]);
+    };
 
-    const deleteTask = (ind) => {
-        setTaskArray(taskArray.filter((_, index) => index !== ind));
-    }
+    const deleteTask = (index) => {
+        setTasks((prev) => prev.filter((_, i) => i !== index));
+    };
 
     return (
-        <TaskContext.Provider value={{tasks: taskArray, addTask, deleteTask}}>
+        <TaskContext.Provider value={{ tasks, addTask, deleteTask }}>
             {children}
         </TaskContext.Provider>
-    )
-}
+    );
+};
