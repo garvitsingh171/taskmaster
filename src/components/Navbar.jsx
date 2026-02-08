@@ -23,17 +23,6 @@ function Navbar() {
 
                     <li>
                         <NavLink
-                            to="/add"
-                            className={({ isActive }) =>
-                                isActive ? "nav-item active" : "nav-item"
-                            }
-                        >
-                            + Add Task
-                        </NavLink>
-                    </li>
-
-                    <li>
-                        <NavLink
                             to="/login"
                             className={({ isActive }) =>
                                 isActive ? "nav-item active" : "nav-item"

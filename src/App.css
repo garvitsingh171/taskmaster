@@ -1,51 +1,129 @@
-/* App Layout Wrapper */
+/* ================= App Layout ================= */
+
 .app-wrapper {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
   animation: appFadeIn 0.6s ease;
+  background: radial-gradient(circle at top right, #eff6ff, #fdfbf7);
 }
 
-/* Main Content Area */
 .content-area {
   flex: 1;
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 40px 20px;
+  padding: 50px 20px;
   box-sizing: border-box;
 }
 
-/* Welcome Page Text */
-.welcome-text {
+/* ================= Home Section ================= */
+
+.home {
+  min-height: calc(100vh - 120px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   text-align: center;
-  font-size: 3.4rem;
-  font-weight: 800;
-  margin-top: 80px;
+  padding: 40px 20px;
+  animation: fadeUp 0.8s ease;
+}
+
+.home-title {
+  font-size: 3.6rem;
+  font-weight: 900;
   letter-spacing: -1.5px;
 
-  /* Blue gradient text */
   background: linear-gradient(135deg, #3b82f6, #60a5fa);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-
-  animation: welcomeFade 0.8s ease;
 }
 
-/* Subtle divider (future use) */
-.section-divider {
-  width: 100%;
+.home-subtitle {
+  margin-top: 16px;
+  font-size: 1.15rem;
+  color: var(--text-secondary);
+  max-width: 520px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ================= Buttons ================= */
+
+.home-actions {
+  margin-top: 40px;
+  display: flex;
+  gap: 18px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 14px 28px;
+  border-radius: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Primary Button */
+.btn.primary {
+  background: linear-gradient(135deg, #3b82f6, #60a5fa);
+  color: white;
+  box-shadow: 0 14px 30px rgba(59, 130, 246, 0.35);
+}
+
+.btn.primary:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(59, 130, 246, 0.45);
+}
+
+/* Secondary Button */
+.btn.secondary {
+  background: #ffffff;
+  color: var(--primary);
+  border: 2px solid #dbeafe;
+}
+
+.btn.secondary:hover {
+  background: #eff6ff;
+  transform: translateY(-2px);
+}
+
+/* ================= Divider ================= */
+
+.home-divider {
   height: 1px;
   background: linear-gradient(
     to right,
     transparent,
-    rgba(59, 130, 246, 0.3),
+    rgba(59, 130, 246, 0.4),
     transparent
   );
-  margin: 60px 0;
+  margin: 70px 0 50px;
 }
 
-/* Reusable glass card utility (optional) */
+/* ================= Task Section ================= */
+
+.home-tasks {
+  max-width: 900px;
+  margin: 0 auto;
+  animation: fadeUp 0.9s ease;
+}
+
+.section-title {
+  font-size: 1.8rem;
+  font-weight: 800;
+  margin-bottom: 30px;
+  color: var(--text-primary);
+  text-align: left;
+}
+
+/* ================= Utilities ================= */
+
 .glass {
   background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(14px);
@@ -54,21 +132,17 @@
   box-shadow: 0 30px 60px rgba(59, 130, 246, 0.12);
 }
 
-/* ---------- Animations ---------- */
+/* ================= Animations ================= */
 
 @keyframes appFadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
-@keyframes welcomeFade {
+@keyframes fadeUp {
   from {
     opacity: 0;
-    transform: translateY(18px);
+    transform: translateY(24px);
   }
   to {
     opacity: 1;
@@ -76,64 +150,32 @@
   }
 }
 
-/* ---------- Responsive ---------- */
+/* ================= Responsive ================= */
 
 @media (max-width: 768px) {
-  .welcome-text {
-    font-size: 2.4rem;
-    margin-top: 60px;
+  .home-title {
+    font-size: 2.6rem;
+  }
+
+  .home-subtitle {
+    font-size: 1rem;
   }
 
   .content-area {
-    padding: 30px 16px;
+    padding: 35px 16px;
   }
 }
 
 @media (max-width: 480px) {
-  .welcome-text {
-    font-size: 2rem;
+  .home-title {
+    font-size: 2.2rem;
   }
-}
 
-.home {
-    min-height: calc(100vh - 120px);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-}
+  .home-actions {
+    flex-direction: column;
+  }
 
-.home-title {
-    font-size: 3rem;
-    font-weight: 700;
-}
-
-.home-subtitle {
-    margin-top: 12px;
-    font-size: 1.2rem;
-    color: #666;
-}
-
-.home-actions {
-    margin-top: 30px;
-    display: flex;
-    gap: 16px;
-    justify-content: center;
-}
-
-.btn {
-    padding: 12px 24px;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: 600;
-}
-
-.btn.primary {
-    background: #2563eb;
-    color: white;
-}
-
-.btn.secondary {
-    background: #e5e7eb;
-    color: #111;
+  .btn {
+    width: 100%;
+  }
 }
