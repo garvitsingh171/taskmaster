@@ -6,25 +6,27 @@ import Footer from "./components/Footer";
 import AddTask from "./pages/AddTask";
 import LogIn from "./pages/LogIn";
 import Home from "./pages/Home";
+import { useState } from "react";
 
 function App() {
+    const [darkMode, setDarkMode] = useState(false);
+
     return (
         <TaskProvider>
             <HashRouter>
-                <Navbar />
+                <div className={darkMode ? "app dark" : "app"}>
+                    <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
 
-                <main className="content-area">
-                    <Routes>
-                        <Route
-                            path="/"
-                            element={<Home />}
-                        />
-                        <Route path="/add" element={<AddTask />} />
-                        <Route path="/login" element={<LogIn />} />
-                    </Routes>
-                </main>
+                    <main className="content-area">
+                        <Routes>
+                            <Route path="/" element={<Home />} />
+                            <Route path="/add" element={<AddTask />} />
+                            <Route path="/login" element={<LogIn />} />
+                        </Routes>
+                    </main>
 
-                <Footer />
+                    <Footer />
+                </div>
             </HashRouter>
         </TaskProvider>
     );

@@ -135,3 +135,33 @@
     font-size: 0.9rem;
   }
 }
+
+.theme-toggle {
+  padding: 8px 16px;
+  border-radius: 25px;
+  border: 1px solid #d0d7ff;
+  background: linear-gradient(135deg, #eef2ff, #dbe4ff);
+  color: #333;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Hover effect */
+.theme-toggle:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Active click effect */
+.theme-toggle:active {
+  transform: scale(0.95);
+}
+
+/* Dark mode button style */
+.dark .theme-toggle {
+  background: linear-gradient(135deg, #2a2a2a, #3a3a3a);
+  border: 1px solid #444;
+  color: #fff;
+}

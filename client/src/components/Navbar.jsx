@@ -1,7 +1,7 @@
 import "../styles/Navbar.css";
 import { Link, NavLink } from "react-router-dom";
 
-function Navbar() {
+function Navbar({ darkMode, setDarkMode }) {
     return (
         <nav className="navbar">
             <div className="navbar-container">
@@ -30,6 +30,12 @@ function Navbar() {
                         >
                             Log In
                         </NavLink>
+                    </li>
+                    
+                    <li>
+                        <button type="button" onClick={() => setDarkMode(!darkMode)} className="theme-toggle">
+                            {darkMode ? 'Light' : 'Dark'}
+                        </button>
                     </li>
                 </ul>
             </div>
