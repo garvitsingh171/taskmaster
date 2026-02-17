@@ -1,4 +1,4 @@
-import '../App.css';
+import '../styles/Home.css';
 import { Link } from "react-router-dom";
 import TaskList from '../components/TaskList';
 import AddTask from '../components/AddTask';

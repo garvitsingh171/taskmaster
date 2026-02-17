@@ -1,53 +1,112 @@
+/* ============================= */
+/* Base Theme Variables (Light) */
+/* ============================= */
+
+.app {
+    --item-bg: #ffffff;
+    --item-border: #e5e7eb;
+    --item-shadow: rgba(0, 0, 0, 0.05);
+    --text-primary: #111827;
+    --text-secondary: #6b7280;
+    --label-bg: #eef2ff;
+    --label-text: #4338ca;
+    --delete-bg: #fee2e2;
+    --delete-text: #dc2626;
+}
+
+/* ============================= */
+/* Dark Mode Variables */
+/* ============================= */
+
+.app.dark {
+    --item-bg: #1f2937;
+    --item-border: #374151;
+    --item-shadow: rgba(0, 0, 0, 0.4);
+    --text-primary: #f9fafb;
+    --text-secondary: #9ca3af;
+    --label-bg: #312e81;
+    --label-text: #c7d2fe;
+    --delete-bg: #7f1d1d;
+    --delete-text: #fecaca;
+}
+
+/* ============================= */
+/* Task Item Layout */
+/* ============================= */
+
 .task-item {
-  background: white;
-  border-radius: 18px;
-  padding: 16px 20px;
-  margin-bottom: 14px;
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  border: 1px solid #e5edff;
-  box-shadow: 0 10px 20px rgba(59,130,246,0.08);
-  animation: slideFade 0.4s ease;
-  transition: all 0.3s ease;
+    display: grid;
+    grid-template-columns: 1fr auto auto auto;
+    align-items: center;
+    gap: 14px;
+
+    background: var(--item-bg);
+    border: 1px solid var(--item-border);
+    box-shadow: 0 4px 14px var(--item-shadow);
+
+    padding: 14px 16px;
+    border-radius: 14px;
+
+    transition: all 0.25s ease;
 }
 
 .task-item:hover {
-  transform: translateX(6px);
-  border-color: var(--primary);
+    transform: translateY(-2px);
 }
 
+/* ============================= */
+/* Text Styling */
+/* ============================= */
+
 .task-text {
-  flex: 2;
-  font-weight: 600;
+    font-weight: 500;
+    color: var(--text-primary);
 }
 
 .task-date {
-  background: #eff6ff;
-  padding: 6px 10px;
-  border-radius: 10px;
-  font-size: 0.8rem;
+    font-size: 13px;
+    color: var(--text-secondary);
 }
 
 .task-label {
-  background: var(--accent-light);
-  color: var(--primary);
-  padding: 6px 14px;
-  border-radius: 20px;
-  font-size: 0.75rem;
-  font-weight: 700;
+    font-size: 12px;
+    padding: 4px 10px;
+    border-radius: 999px;
+    background: var(--label-bg);
+    color: var(--label-text);
 }
 
+/* ============================= */
+/* Delete Button */
+/* ============================= */
+
 .delete-btn {
-  background: #fee2e2;
-  color: #ef4444;
-  border-radius: 10px;
-  width: 34px;
-  height: 34px;
+    border: none;
+    background: var(--delete-bg);
+    color: var(--delete-text);
+
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    cursor: pointer;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    transition: all 0.2s ease;
 }
 
 .delete-btn:hover {
-  background: #ef4444;
-  color: white;
-  transform: rotate(90deg) scale(1.1);
+    transform: scale(1.1);
+}
+
+@media (max-width: 600px) {
+    .task-item {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+
+    .delete-btn {
+        justify-self: flex-end;
+    }
 }

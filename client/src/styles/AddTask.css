@@ -1,114 +1,113 @@
-/* Container (now component style, not full page) */
+/* ============================= */
+/* Theme Variables */
+/* ============================= */
+
+.app {
+    --form-bg: #ffffff;
+    --form-border: #e5e7eb;
+    --form-text: #111827;
+    --form-muted: #6b7280;
+    --input-bg: #f9fafb;
+    --input-border: #d1d5db;
+    --button-bg: #4f46e5;
+    --button-hover: #4338ca;
+    --button-text: #ffffff;
+}
+
+.app.dark {
+    --form-bg: #1f2937;
+    --form-border: #374151;
+    --form-text: #f9fafb;
+    --form-muted: #9ca3af;
+    --input-bg: #111827;
+    --input-border: #374151;
+    --button-bg: #6366f1;
+    --button-hover: #818cf8;
+    --button-text: #ffffff;
+}
+
+/* ============================= */
+/* Container */
+/* ============================= */
+
 .add-task-container {
-  width: 100%;
-  max-width: 650px;
-  margin: 30px auto;
-  padding: 32px;
-  border-radius: 24px;
-
-  background: rgba(255, 255, 255, 0.75);
-  backdrop-filter: blur(16px);
-  border: 1px solid rgba(229, 237, 255, 0.8);
-
-  box-shadow: 0 20px 50px rgba(59, 130, 246, 0.08);
-  transition: all 0.3s ease;
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 16px;
+    background: var(--form-bg);
+    border: 1px solid var(--form-border);
 }
 
-/* Subtle lift on hover */
-.add-task-container:hover {
-  transform: translateY(-3px);
-}
-
+/* ============================= */
 /* Title */
+/* ============================= */
+
 .form-title {
-  text-align: center;
-  font-size: 1.7rem;
-  font-weight: 700;
-  margin-bottom: 24px;
-  letter-spacing: 0.5px;
+    margin-bottom: 18px;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--form-text);
 }
 
-/* Form layout */
+/* ============================= */
+/* Form Layout */
+/* ============================= */
+
 .task-form {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
 }
 
-/* Label */
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
 .input-group label {
-  font-weight: 600;
-  font-size: 0.9rem;
-  margin-bottom: 6px;
-  display: block;
-  opacity: 0.8;
+    font-size: 14px;
+    color: var(--form-muted);
 }
 
+/* ============================= */
 /* Inputs */
-.task-form input,
-.task-form select {
-  padding: 14px 16px;
-  border-radius: 14px;
-  border: 2px solid transparent;
-  background: #f4f8ff;
-  font-size: 0.95rem;
-  transition: all 0.25s ease;
+/* ============================= */
+
+.input-group input,
+.input-group select {
+    padding: 10px 12px;
+    border-radius: 10px;
+    border: 1px solid var(--input-border);
+    background: var(--input-bg);
+    color: var(--form-text);
+    font-size: 14px;
+    transition: all 0.2s ease;
 }
 
-/* Focus effect */
-.task-form input:focus,
-.task-form select:focus {
-  outline: none;
-  background: white;
-  border-color: var(--primary);
-  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.12);
+.input-group input:focus,
+.input-group select:focus {
+    outline: none;
+    border-color: var(--button-bg);
 }
 
-/* Button */
+/* ============================= */
+/* Submit Button */
+/* ============================= */
+
 .submit-btn {
-  margin-top: 10px;
-  padding: 14px;
-  border-radius: 14px;
-  border: none;
-  cursor: pointer;
-
-  font-weight: 600;
-  letter-spacing: 0.5px;
-
-  background: linear-gradient(135deg, #3b82f6, #60a5fa);
-  color: white;
-
-  transition: all 0.25s ease;
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    background: var(--button-bg);
+    color: var(--button-text);
+    transition: all 0.2s ease;
 }
 
-/* Hover */
 .submit-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 20px rgba(59, 130, 246, 0.25);
-}
-
-/* Active click */
-.submit-btn:active {
-  transform: scale(0.97);
-}
-
-.dark .add-task-container {
-  background: rgba(30, 30, 30, 0.75);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
-}
-
-.dark .task-form input,
-.dark .task-form select {
-  background: #1f1f1f;
-  color: white;
-}
-
-.dark .task-form input:focus,
-.dark .task-form select:focus {
-  background: #2a2a2a;
-}
-
-.dark .form-title {
-  color: white;
+    background: var(--button-hover);
+    transform: translateY(-2px);
 }

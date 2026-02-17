@@ -1,13 +1,47 @@
+/* Container */
 .task-list-container {
-  list-style: none;
-  padding: 0;
-  margin-top: 35px;
-  animation: fadeUp 0.5s ease;
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
 }
 
+/* Empty state */
 .empty-text {
-  text-align: center;
-  color: var(--text-secondary);
-  margin-top: 30px;
-  font-weight: 600;
+    margin-top: 20px;
+    font-size: 15px;
+    text-align: center;
+    opacity: 0.7;
+}
+
+/* Light Mode */
+.app {
+    --task-bg: #ffffff;
+    --task-border: #e5e7eb;
+    --task-shadow: rgba(0, 0, 0, 0.05);
+    --text-muted: #6b7280;
+}
+
+/* Dark Mode */
+.app.dark {
+    --task-bg: #1f2937;
+    --task-border: #374151;
+    --task-shadow: rgba(0, 0, 0, 0.4);
+    --text-muted: #9ca3af;
+}
+
+/* Apply theme variables */
+.task-list-container li {
+    background: var(--task-bg);
+    border: 1px solid var(--task-border);
+    box-shadow: 0 4px 12px var(--task-shadow);
+    padding: 14px 16px;
+    border-radius: 12px;
+    transition: all 0.25s ease;
+}
+
+.task-list-container li:hover {
+    transform: translateY(-2px);
 }

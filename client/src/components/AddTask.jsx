@@ -13,7 +13,10 @@ function AddTask() {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        if (!formData.task.trim()) return;
+        if (!formData.task.trim()) {
+            alert("Task can't be empty");
+            return;
+        }
 
         addTask(formData);
         setFormData({ task: "", due: "", label: "" });

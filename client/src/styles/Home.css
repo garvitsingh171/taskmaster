@@ -1,0 +1,99 @@
+/* ========================= */
+/* HOME LAYOUT */
+/* ========================= */
+
+.home {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+/* ========================= */
+/* HERO SECTION */
+/* ========================= */
+
+.home-content {
+  text-align: center;
+  padding: 40px 20px 10px 20px;
+}
+
+.home-title {
+  font-size: 2.4rem;
+  font-weight: 800;
+  margin-bottom: 10px;
+  letter-spacing: 0.5px;
+}
+
+.home-subtitle {
+  font-size: 1.1rem;
+  opacity: 0.85;
+}
+
+/* ========================= */
+/* ACTION BUTTONS */
+/* ========================= */
+
+.home-actions {
+  margin-top: 25px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+/* Button Base */
+.btn {
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.25s ease;
+}
+
+/* Primary Button */
+.btn.primary {
+  background: linear-gradient(135deg, #3b82f6, #60a5fa);
+  color: white;
+}
+
+/* Secondary Button */
+.btn.secondary {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* ========================= */
+/* DIVIDER */
+/* ========================= */
+
+.home-divider {
+  height: 1px;
+  width: 100%;
+  background: var(--border-color);
+  margin: 10px 0;
+}
+
+/* ========================= */
+/* TASK SECTION */
+/* ========================= */
+
+.home-tasks {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.section-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.home-content {
+  max-width: 700px;
+  margin: 0 auto;
+}

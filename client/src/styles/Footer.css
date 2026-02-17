@@ -1,9 +1,33 @@
+/* ============================= */
+/* Theme Variables */
+/* ============================= */
+
+.app {
+    --footer-bg: #ffffff;
+    --footer-border: #e5e7eb;
+    --footer-text: #6b7280;
+}
+
+.app.dark {
+    --footer-bg: #111827;
+    --footer-border: #1f2937;
+    --footer-text: #9ca3af;
+}
+
+/* ============================= */
+/* Footer Layout */
+/* ============================= */
+
 .footer {
-  text-align: center;
-  padding: 30px;
-  font-size: 0.9rem;
-  color: var(--text-secondary);
-  background: rgba(255,255,255,0.9);
-  border-top: 1px solid #e5edff;
-  animation: fadeUp 0.6s ease;
+    margin-top: 40px;
+    padding: 20px 0;
+    text-align: center;
+
+    background: var(--footer-bg);
+    border-top: 1px solid var(--footer-border);
+}
+
+.footer p {
+    font-size: 14px;
+    color: var(--footer-text);
 }
