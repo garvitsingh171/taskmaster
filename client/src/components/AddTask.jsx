@@ -5,7 +5,7 @@ import "../styles/AddTask.css";
 function AddTask() {
     const { addTask } = useTasks();
     const [formData, setFormData] = useState({
-        task: "",
+        text: "",
         due: "",
         label: "",
     });
@@ -13,13 +13,19 @@ function AddTask() {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        if (!formData.task.trim()) {
+        if (!formData.text.trim()) {
             alert("Task can't be empty");
             return;
         }
 
-        addTask(formData);
-        setFormData({ task: "", due: "", label: "" });
+        const newTask = {
+            ...formData,
+            id: Date.now(),
+            completed: false
+        }
+
+        addTask(newTask);
+        setFormData({ text: "", due: "", label: "" });
     };
 
     return (
@@ -32,9 +38,9 @@ function AddTask() {
                     <input
                         type="text"
                         placeholder="Enter task..."
-                        value={formData.task}
+                        value={formData.text}
                         onChange={(e) =>
-                            setFormData({ ...formData, task: e.target.value })
+                            setFormData({ ...formData, text: e.target.value })
                         }
                     />
                 </div>

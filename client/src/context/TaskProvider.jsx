@@ -8,12 +8,22 @@ export const TaskProvider = ({ children }) => {
         setTasks((prev) => [task, ...prev]);
     };
 
-    const deleteTask = (index) => {
-        setTasks((prev) => prev.filter((_, i) => i !== index));
+    const deleteTask = (id) => {
+        setTasks((prev) => prev.filter((task) => task.id !== id));
+    };
+
+    const updateTask = (id, updatedData) => {
+        setTasks((prev) =>
+            prev.map((task) => {
+                return task.id === id ? { ...task, ...updatedData } : task;
+            }),
+        );
     };
 
     return (
-        <TaskContext.Provider value={{ tasks, addTask, deleteTask }}>
+        <TaskContext.Provider
+            value={{ tasks, addTask, deleteTask, updateTask }}
+        >
             {children}
         </TaskContext.Provider>
     );
