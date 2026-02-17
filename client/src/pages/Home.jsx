@@ -1,6 +1,7 @@
 import '../App.css';
 import { Link } from "react-router-dom";
 import TaskList from '../components/TaskList';
+import AddTask from '../components/AddTask';
 
 function Home() {
     return (
@@ -11,9 +12,6 @@ function Home() {
                     Here’s what you need to get done
                 </p>
                 <div className='home-actions'>
-                    <Link to="/add" className='btn primary'>
-                    Add a Task
-                    </Link>
                     <Link to="/login" className='btn secondary'>
                     Login
                     </Link>
@@ -24,6 +22,7 @@ function Home() {
 
             <div className='home-tasks'>
                 <h2 className='section-title'>Your Tasks</h2>
+                <AddTask />
                 <TaskList />
             </div>
         </section>
