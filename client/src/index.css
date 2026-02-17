@@ -1,3 +1,47 @@
+/* ============================= */
+/* Base Reset */
+/* ============================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ============================= */
+/* Theme Variables */
+/* ============================= */
+
+.app {
+  --bg-primary: #f9fafb;
+  --text-primary: #111827;
+}
+
+.app.dark {
+  --bg-primary: #0f172a;
+  --text-primary: #f9fafb;
+}
+
+/* ============================= */
+/* Body Styling */
+/* ============================= */
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* Smooth theme switching */
+.app {
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* ============================= */
+/* Animations */
+/* ============================= */
+
 .fade-in {
   animation: fadeSlide 0.6s ease forwards;
 }
@@ -44,8 +88,4 @@
     opacity: 1;
     transform: translateX(0);
   }
-}
-
-body {
-  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
 }

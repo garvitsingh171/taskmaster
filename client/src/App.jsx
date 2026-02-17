@@ -13,7 +13,7 @@ function App() {
     return (
         <TaskProvider>
             <HashRouter>
-                <div className={darkMode ? "app dark" : "app"}>
+                <div className={darkMode ? "app dark fade-in" : "app fade-in"}>
                     <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
 
                     <main className="content-area">
