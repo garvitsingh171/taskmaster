@@ -9,4 +9,3 @@ TaskMaster is a simple task management application built with React. It allows u
 - Delete tasks
 - Mark tasks as completed
 - Persist tasks using local storage
-
