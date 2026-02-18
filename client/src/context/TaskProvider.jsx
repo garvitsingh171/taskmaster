@@ -20,9 +20,19 @@ export const TaskProvider = ({ children }) => {
         );
     };
 
+    const completeTask = (id) => {
+        setTasks((prev) => {
+            return prev.map((task) => {
+                return task.id === id
+                    ? { ...task, complete: !task.complete }
+                    : task;
+            });
+        });
+    };
+
     return (
         <TaskContext.Provider
-            value={{ tasks, addTask, deleteTask, updateTask }}
+            value={{ tasks, addTask, deleteTask, updateTask, completeTask }}
         >
             {children}
         </TaskContext.Provider>
