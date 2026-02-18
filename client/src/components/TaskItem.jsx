@@ -1,18 +1,18 @@
 import "../styles/TaskItem.css";
 import { useTasks } from "../hooks/useTasks";
+import EditTask from "./EditTask";
+import { useState } from "react";
 
 function TaskItem({ data }) {
-    const { deleteTask, updateTask, completeTask } = useTasks();
+    const { deleteTask, completeTask } = useTasks();
+    const [isEditOpen, setIsEditOpen] = useState(false);
 
-    const handleEdit = () => {
-        const newText = prompt("Edit Task:", data.text);
-
-        if (!newText) return;
-
-        updateTask(data.id, { text: newText });
-    };
     return (
-        <li className="task-item">
+        <>
+            {isEditOpen && (
+                <EditTask task={data} onClose={() => setIsEditOpen(false)} />
+            )}
+            <li className="task-item">
             <input
                 className="check-btn"
                 type="checkbox"
@@ -20,13 +20,15 @@ function TaskItem({ data }) {
                 onChange={() => completeTask(data.id)}
             />
 
-            <span className={`task-test ${data.complete ? "completed" : ""}`}>{data.text}</span>
+            <span className={`task-test ${data.complete ? "completed" : ""}`}>
+                {data.text}
+            </span>
             <span className="task-date">{data.due || "No date"}</span>
             <span className="task-label">{data.label || "General"}</span>
 
             <button
                 className="edit-btn"
-                onClick={handleEdit}
+                onClick={() => setIsEditOpen(true)}
                 aria-label="Edit task"
             >
                 ✏️
@@ -40,6 +42,7 @@ function TaskItem({ data }) {
                 ×
             </button>
         </li>
+        </>
     );
 }
 
