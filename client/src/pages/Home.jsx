@@ -6,7 +6,7 @@ import AddTask from '../components/AddTask';
 function Home() {
     return (
         <section className='home'>
-            <div className='home-content'>
+            {/* <div className='home-content'>
                 <h1 className='home-title'>Good day 👋</h1>
                 <p className='home-subtitle'>
                     Here’s what you need to get done
@@ -16,14 +16,14 @@ function Home() {
                     Login
                     </Link>
                 </div>
-            </div>
+            </div> */}
 
-            <div className='home-divider'></div>
+            {/* <div className='home-divider'></div> */}
 
             <div className='home-tasks'>
                 <h2 className='section-title'>Your Tasks</h2>
-                <AddTask />
                 <TaskList />
+                <AddTask />
             </div>
         </section>
     )

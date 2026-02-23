@@ -20,27 +20,29 @@ function TaskItem({ data }) {
                 onChange={() => completeTask(data.id)}
             />
 
-            <span className={`task-test ${data.complete ? "completed" : ""}`}>
+            <span className={`task-text ${data.complete ? "completed" : ""}`}>
                 {data.text}
             </span>
             <span className="task-date">{data.due || "No date"}</span>
             <span className="task-label">{data.label || "General"}</span>
 
-            <button
-                className="edit-btn"
-                onClick={() => setIsEditOpen(true)}
-                aria-label="Edit task"
-            >
-                ✏️
-            </button>
+            <div className="task-actions">
+                <button
+                    className="edit-btn"
+                    onClick={() => setIsEditOpen(true)}
+                    aria-label="Edit task"
+                >
+                    ✏️
+                </button>
 
-            <button
-                className="delete-btn"
-                onClick={() => deleteTask(data.id)}
-                aria-label="Delete task"
-            >
-                ×
-            </button>
+                <button
+                    className="delete-btn"
+                    onClick={() => deleteTask(data.id)}
+                    aria-label="Delete task"
+                >
+                    ×
+                </button>
+            </div>
         </li>
         </>
     );
